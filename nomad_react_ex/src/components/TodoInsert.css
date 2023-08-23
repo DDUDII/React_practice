@@ -1,0 +1,59 @@
+.background {
+  position: fixed;
+  z-index: 980;
+  top: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  opacity: 0.8;
+}
+
+form {
+  margin-left: 10%;
+  position: fixed;
+  top: 40%;
+  display: flex;
+  /* input box와 버튼이 위아래로 되도록 */
+  flex-direction: column;
+  justify-content: center;
+  z-index: 990;
+  width: 300px;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 1px 1.5px 3px 1px rgb(136, 136, 136);
+  background-color: white;
+}
+
+form > input {
+  text-align: center;
+
+  background-color: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.2px;
+  margin-bottom: 10px;
+}
+
+form > button {
+  padding-top: 20px;
+  background: none;
+  outline: none;
+  border: none;
+  color: gray;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.1s background ease-in;
+}

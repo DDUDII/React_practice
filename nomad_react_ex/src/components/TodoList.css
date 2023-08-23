@@ -1,9 +1,8 @@
 .TodoList {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  overflow: hidden;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
 }
 
 .TodoList .TodoItem:not(:last-child) {

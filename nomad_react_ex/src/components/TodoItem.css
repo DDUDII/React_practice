@@ -1,23 +1,40 @@
 .TodoItem {
-  padding: 12px 16px;
-}
+  margin-left: auto;
+  margin-right: auto;
 
-.content {
+  border-radius: 5px;
+  box-shadow: 1px 1.5px 3px 1px rgb(136, 136, 136);
+  padding: 1rem;
   display: flex;
   align-items: center;
 }
 
-.checked .text {
-  text-decoration: line-through;
-  color: #a0a0a0;
+.TodoItem + .TodoItem {
+  margin-top: 15px;
+}
+
+.content {
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .content svg {
   font-size: 24px;
   margin-right: 8px;
-  cursor: pointer;
 }
 
 .text {
+  margin-left: 0.5rem;
+  /* 해당하는 위치 전체를 자기가 차지할 수 있게 */
+  flex: 1;
   font-size: 16px;
+}
+
+.content.checked .text {
+  color: rgb(176, 176, 176);
+  text-decoration: line-through;
+  cursor: pointer;
+  opacity: 0.6;
 }

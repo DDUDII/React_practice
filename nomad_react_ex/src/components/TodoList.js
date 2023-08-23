@@ -2,11 +2,12 @@ import React from "react";
 import TodoItem from "./TodoItem";
 import "./TodoList.css";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onCheckToggle }) => {
   return (
     <div className="TodoList">
       {todos.map((todo) => (
-        <TodoItem todo={todo} key={todo.id} />
+        // todolist가 받은 props를 todoitem에 전달
+        <TodoItem todo={todo} key={todo.id} onCheckToggle={onCheckToggle} />
       ))}
     </div>
   );
