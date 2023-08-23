@@ -38,7 +38,7 @@ const App = () => {
   const onCheckToggle = (id) => {
     setTodos((todos) =>
       todos.map((todo) =>
-        todo.id === id ? { ...todo, checked: !todos.checked } : todo
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
       )
     );
   };
