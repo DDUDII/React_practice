@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TodoInsert.css";
-import { BiCalendarPlus } from "react-icons/bi";
+import { BiCalendarPlus, BiTrash, BiPencil } from "react-icons/bi";
 
-const TodoInsert = ({ onInsertToggle, onInsertTodo }) => {
+const TodoInsert = ({
+  onInsertToggle,
+  onInsertTodo,
+  selectedTodo,
+  onRemove,
+  onUpdate,
+}) => {
   const [value, setValue] = useState("");
   const onChange = (e) => {
     setValue(e.target.value);
@@ -14,19 +20,48 @@ const TodoInsert = ({ onInsertToggle, onInsertTodo }) => {
     setValue("");
     onInsertToggle();
   };
+
+  useEffect(() => {
+    if (selectedTodo) {
+      setValue(selectedTodo.text);
+    }
+  }, [selectedTodo]);
   return (
     <div>
       <div className="background" onClick={onInsertToggle}></div>
-      <form onSubmit={onSubmit}>
+      <form
+        onSubmit={
+          selectedTodo
+            ? () => {
+                onUpdate(selectedTodo.id, value);
+              }
+            : onSubmit
+        }
+      >
         <input
           type="text"
           placeholder="write your todo"
           value={value}
           onChange={onChange}
         ></input>
-        <button type="submit">
-          <BiCalendarPlus />
-        </button>
+        {selectedTodo ? (
+          <div className="rewrite">
+            <BiPencil
+              onClick={() => {
+                onUpdate(selectedTodo.id, value);
+              }}
+            />
+            <BiTrash
+              onClick={() => {
+                onRemove(selectedTodo.id);
+              }}
+            />
+          </div>
+        ) : (
+          <button type="submit">
+            <BiCalendarPlus />
+          </button>
+        )}
       </form>
     </div>
   );

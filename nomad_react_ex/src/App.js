@@ -19,6 +19,9 @@ const App = () => {
 
   const onInsertToggle = () => {
     setInsertToggle((prev) => !prev); //이전 값의 boolean 값을 반대로 해주는 것
+    if (selectedTodo) {
+      setSelectedTodo(null); //todoitem 선택하고나서 플러스 버튼 누를시 null값으로
+    }
   };
 
   const onInsertTodo = (text) => {
@@ -43,16 +46,41 @@ const App = () => {
     );
   };
 
+  const [selectedTodo, setSelectedTodo] = useState(null);
+  const onChangeSelectedTodo = (todo) => {
+    setSelectedTodo(todo);
+  };
+
+  const onRemove = (id) => {
+    onInsertToggle();
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+  };
+
+  const onUpdate = (id, text) => {
+    onInsertToggle();
+    setTodos((todos) =>
+      todos.map((todo) => (todo.id === id ? { ...todo, text } : todo))
+    );
+  };
+
   return (
     <Template className="Template" todoLength={todos.length}>
       {/* TodoList에 props로 todos를 넘겨줌  */}
-      <TodoList todos={todos} onCheckToggle={onCheckToggle} />
+      <TodoList
+        todos={todos}
+        onCheckToggle={onCheckToggle}
+        onInsertToggle={onInsertToggle}
+        onChangeSelectedTodo={onChangeSelectedTodo}
+      />
 
       {/* insertToggle이 true 일 경우에만 TodoInsert가 작동 */}
       {insertToggle && (
         <TodoInsert
           onInsertToggle={onInsertToggle}
           onInsertTodo={onInsertTodo}
+          selectedTodo={selectedTodo} //선택된 todo를 todoinsert에 넣어줌
+          onRemove={onRemove}
+          onUpdate={onUpdate}
         />
       )}
 
