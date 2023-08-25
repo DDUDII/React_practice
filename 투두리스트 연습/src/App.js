@@ -12,9 +12,9 @@ let nextId = 4;
 const App = () => {
   const [insertToggle, setInsertToggle] = useState(false);
   const [todos, setTodos] = useState([
-    { id: 1, text: "할일 1", checked: true },
+    { id: 1, text: "할일 1", checked: false },
     { id: 2, text: "할일 2", checked: false },
-    { id: 3, text: "할일 3", checked: true },
+    { id: 3, text: "할일 3", checked: false },
   ]);
 
   const onInsertToggle = () => {
@@ -63,8 +63,17 @@ const App = () => {
     );
   };
 
+  const today = new Date();
+  const todayContent = `${today.getFullYear()}년 ${
+    today.getMonth() + 1
+  }월 ${today.getDate()}일`;
+
   return (
-    <Template className="Template" todoLength={todos.length}>
+    <Template
+      className="Template"
+      todoLength={todos.length}
+      todayContent={todayContent}
+    >
       {/* TodoList에 props로 todos를 넘겨줌  */}
       <TodoList
         todos={todos}

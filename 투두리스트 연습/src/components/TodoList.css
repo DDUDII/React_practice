@@ -1,10 +1,6 @@
 .TodoList {
-  width: 90vw;
+  flex: 1;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
-}
-
-.TodoList .TodoItem:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
 }

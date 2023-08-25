@@ -1,16 +1,32 @@
 .Template {
-  max-height: 100vh;
-  padding-top: 20px;
+  width: 500px;
+  height: 600px;
+  position: relative;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.todayContent {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: rgb(230, 123, 159);
 }
 
 .title {
-  width: 90vw;
   /* 가운데 위치 하도록 */
   margin-left: auto;
   margin-right: auto;
 
   padding-bottom: 20px;
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: bold;
-  color: grey;
+  color: rgb(250, 168, 181);
 }

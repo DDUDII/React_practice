@@ -29,17 +29,33 @@ form {
 }
 
 form > input {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-
+  width: 70%;
   background-color: none;
   outline: none;
   border: none;
   border-bottom: 1px solid grey;
-
+  color: rgb(99, 98, 98);
   padding: 0.5rem;
   font-size: 1.1rem;
   line-height: 1.2px;
   margin-bottom: 10px;
+}
+
+input :focus {
+  animation-name: border-focus;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes border-focus {
+  from {
+    border-bottom: 1px solid grey;
+  }
+  to {
+    border-bottom: 1.5px solid pink;
+  }
 }
 
 form > button {
@@ -57,12 +73,16 @@ form > button {
   cursor: pointer;
   transition: 0.1s background ease-in;
 }
-
-.rewrite > svg {
+.rewrite {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.rewrite > svg {
   padding-top: 20px;
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 1.5rem;
+  color: rgb(99, 98, 98);
 }

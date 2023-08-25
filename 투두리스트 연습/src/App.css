@@ -1,12 +1,11 @@
 .add-todo-btn {
-  display: flex;
-
-  right: -10px;
+  position: absolute;
+  left: 80%;
   bottom: 0;
 
   width: 100px;
   height: 100px;
   cursor: pointer;
   font-size: 4rem;
-  color: gray;
+  color: rgb(250, 168, 181);
 }

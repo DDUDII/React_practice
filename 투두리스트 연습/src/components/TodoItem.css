@@ -2,11 +2,12 @@
   margin-left: auto;
   margin-right: auto;
 
-  border-radius: 5px;
-  box-shadow: 1px 1.5px 3px 1px rgb(136, 136, 136);
   padding: 1rem;
   display: flex;
   align-items: center;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  width: 70%;
 }
 
 .TodoItem + .TodoItem {
@@ -23,13 +24,18 @@
 .content svg {
   font-size: 24px;
   margin-right: 8px;
+  color: rgb(99, 98, 98);
 }
 
+.content.checked svg {
+  color: pink;
+}
 .text {
   margin-left: 0.5rem;
   /* 해당하는 위치 전체를 자기가 차지할 수 있게 */
   flex: 1;
   font-size: 16px;
+  color: rgb(99, 98, 98);
 }
 
 .content.checked .text {
