@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+div {
+  /* 테두리를 기준으로 크기 정함 */
+  box-sizing: border-box;
+}
+
+.list {
+  padding-left: 20px;
+  text-align: left;
+  border-bottom: 1px solid gray;
+}
+
+.black-nav {
+  display: flex;
+  background-color: rgb(247, 176, 61);
+  width: 100%;
+  color: white;
+  padding-left: 20px;
+}
+
+h4 {
+  display: inline;
+  padding-right: 20px;
+}
