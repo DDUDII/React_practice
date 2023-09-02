@@ -1,14 +1,22 @@
 import { useState } from "react";
 import "./App.css";
 import Modal from "./components/modal";
+import {
+  TiHeart,
+  TiTimes,
+  TiInputChecked,
+  TiPlusOutline,
+} from "react-icons/ti";
+import { BiHeartCircle, BiPlusCircle, BiPaperPlane } from "react-icons/bi";
 
 function App() {
-  let name = "추천 아이템";
+  let name = " 나만의 추천 장소 공유해요 🧸";
   const [post, setPost] = useState([
     "남자 코트 추천",
     "코딩 학원 추천",
     "강남 맛집 추천",
   ]);
+
   const [like, setLike] = useState([0, 0, 0]);
   const [modal, setModal] = useState(false);
   const [title, setTitle] = useState(0);
@@ -22,7 +30,9 @@ function App() {
       return;
     }
     const updatedPost = [...post, inputPost];
+    const updatedLike = [...like, 0];
     setPost(updatedPost);
+    setLike(updatedLike);
     setInputPost("");
   };
   // post 삭제 제어 부분
@@ -71,8 +81,12 @@ function App() {
       <div className="black-nav">
         <h4>{name}</h4>
       </div>
-      <button onClick={postRewrite}>포스트수정</button>
-      <button onClick={postSort}>포스트정렬</button>
+      <button className="postRewrite" onClick={postRewrite}>
+        <TiInputChecked /> 포스트수정
+      </button>
+      <button className="postSort" onClick={postSort}>
+        <TiInputChecked /> 포스트정렬
+      </button>
 
       {post.map((value, index) => {
         //map을 사용하여 배열 나타나게
@@ -88,15 +102,24 @@ function App() {
             >
               {value}
             </h4>
-            <span onClick={() => likeControl(index)}>💟 {like[index]}</span>
+            <span onClick={() => likeControl(index)}>
+              {" "}
+              <BiHeartCircle className="like-svg" /> {like[index]}
+            </span>
+            <button
+              className="remove-post-btn"
+              onClick={() => removePost(index)}
+            >
+              <TiTimes className="remove-post-svg" />
+            </button>
             <p>2월 17일 발행</p>
-            <button onClick={() => removePost(index)}>❌</button>
           </div>
         );
       })}
 
       <form onSubmit={inputControl}>
         <input
+          className="input"
           onChange={(e) => {
             setInputPost(e.target.value);
           }}
@@ -104,7 +127,7 @@ function App() {
           value={inputPost}
         ></input>
         <button className="input-btn" type="submit">
-          제출
+          <BiPaperPlane />
         </button>
       </form>
 

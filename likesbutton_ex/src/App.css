@@ -23,5 +23,69 @@ div {
 
 h4 {
   display: inline;
+
   padding-right: 20px;
+}
+
+.like-svg {
+  font-size: 30px;
+  cursor: pointer;
+  color: orange;
+}
+
+.remove-post-btn {
+  float: right;
+  text-align: right;
+  font-size: 25px;
+  cursor: pointer;
+  color: orange;
+  border: none;
+  background: none;
+}
+
+.input {
+  margin-top: 20px;
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid orange;
+  cursor: pointer;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.postRewrite {
+  border: none;
+  background: none;
+  border-bottom: 1px solid orange;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.postRewrite svg {
+  font-size: 25px;
+}
+
+.postSort {
+  border: none;
+  background: none;
+  border-bottom: 1px solid orange;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.postSort svg {
+  font-size: 25px;
+}
+
+.input-btn {
+  border: none;
+  background: none;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  color: orange;
 }
